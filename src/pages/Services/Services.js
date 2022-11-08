@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import ServiceCard from '../ServiceCard/ServiceCard';
+import ServiceCard from '../Home/Services/ServiceCard/ServiceCard';
 
-const Service = () => {
+const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -18,9 +17,8 @@ const Service = () => {
                     services.map(service => <ServiceCard service={service}></ServiceCard>)
                 }
             </div>
-            <div className='flex justify-center mt-4'><button className='btn btn-primary'><Link to='/services'>see all</Link></button></div>
         </div>
     );
 };
 
-export default Service;
+export default Services;
