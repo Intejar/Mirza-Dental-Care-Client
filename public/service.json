@@ -1,0 +1,104 @@
+[
+    {
+        "title":"Endodontic(RCT, Filling)",
+        "img":"https://i.ibb.co/MM39wq6/1.jpg",
+        "description": "We have special care for filling",
+        "details":[
+            {
+                "package":["we have package","we have package","we have package","we have package","we have package"],
+                "price":[
+                    {
+                        "child":"100",
+                        "young":"50",
+                        "old":"80"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title":"Orthodontic(Braces)",
+        "img":"https://i.ibb.co/9pfJRJ2/2.jpg",
+        "description": "We have special care for filling",
+        "details":[
+            {
+                "package":["we have package","we have package","we have package","we have package","we have package"],
+                "price":[
+                    {
+                        "child":"100",
+                        "young":"50",
+                        "old":"80"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title":"Prosthodontic(Denture)",
+        "img":"https://i.ibb.co/MSK2Hv3/3.jpg",
+        "description": "We have special care for filling",
+        "details":[
+            {
+                "package":["we have package","we have package","we have package","we have package","we have package"],
+                "price":[
+                    {
+                        "child":"100",
+                        "young":"50",
+                        "old":"80"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title":"Peridontology(Scalling)",
+        "img":"https://i.ibb.co/mRppFb0/4.jpg",
+        "description": "We have special care for filling",
+        "details":[
+            {
+                "package":["we have package","we have package","we have package","we have package","we have package"],
+                "price":[
+                    {
+                        "child":"100",
+                        "young":"50",
+                        "old":"80"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title":"Maxiofacial Surgery",
+        "img":"https://i.ibb.co/d6bLsZF/5.jpg",
+        "description": "We have special care for filling",
+        "details":[
+            {
+                "package":["we have package","we have package","we have package","we have package","we have package"],
+                "price":[
+                    {
+                        "child":"100",
+                        "young":"50",
+                        "old":"80"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title":"Pediatric",
+        "img":"https://i.ibb.co/bNHDvQM/6.jpg",
+        "description": "We have special care for filling",
+        "details":[
+            {
+                "package":["we have package","we have package","we have package","we have package","we have package"],
+                "price":[
+                    {
+                        "child":"100",
+                        "young":"50",
+                        "old":"80"
+                    }
+                ]
+            }
+        ]
+    }
+]
