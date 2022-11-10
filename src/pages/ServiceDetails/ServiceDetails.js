@@ -17,6 +17,7 @@ const ServiceDetails = () => {
             }
                 )
     }, [])
+    
 
     return (
         <div>
@@ -44,7 +45,6 @@ const ServiceDetails = () => {
                                 <li>For Age 41-older yrs: ${price.old} </li>
                             </ul>
                         </div>
-                        <button className="btn btn-outline btn-orange ">Add service</button>
                     </div>
                 </div>
 

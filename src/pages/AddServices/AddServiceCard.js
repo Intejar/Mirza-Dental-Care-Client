@@ -8,16 +8,16 @@ const AddServiceCard = ({ service }) => {
     const navigate = useNavigate()
     const list = service.details;
     const price = service.price;
-    const handleAddService = () =>{
+    const handleAddService = (id, name, img, userName, userEmail) =>{
         const addedService = {
-            serviceId : _id,
-            serviceName: title,
+            serviceId : id,
+            serviceName: name,
             serviceImg : img,
-            userName : user.name,
-            userEmail : user.email,
+            userName : userName,
+            email : userEmail
         }
         console.log(addedService)
-        fetch('http://localhost:5000/userServices', {
+        fetch('http://localhost:5000/userservices', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ const AddServiceCard = ({ service }) => {
                         <li>For Age 41-older yrs: ${price.old} </li>
                     </ul>
                 </div>
-                <div className='card-actions justify-end'><button onClick={()=>handleAddService} className="btn btn-outline btn-orange">Add service</button></div>
+                <div className='card-actions justify-end'><button onClick={()=>handleAddService(_id, title, img,user.name,user.email)} className="btn btn-outline btn-orange">Add service</button></div>
             </div>
         </div>
         </div>
