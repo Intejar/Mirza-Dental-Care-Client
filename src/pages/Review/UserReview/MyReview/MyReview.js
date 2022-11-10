@@ -6,7 +6,7 @@ const MyReview = () => {
     const { user,logOut } = useContext(AuthContext)
     const [myReviews, setMyReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/userReview?email=${user?.email}`,{
+        fetch(`https://y-five-psi.vercel.app/userReview?email=${user?.email}`,{
             headers: {
                 authorization : `bearer ${localStorage.getItem('token')}`
             }
@@ -20,7 +20,7 @@ const MyReview = () => {
             .then(data => setMyReviews(data))
     }, [user?.email , logOut])
     const handleEdit = (id, editedText) => {
-        fetch(`http://localhost:5000/review/${id}`, {
+        fetch(`https://y-five-psi.vercel.app/review/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const MyReview = () => {
         const proceed = window.confirm('Are you sure you want to delete this order?')
         console.log(id)
         if (proceed) {
-            fetch(`http://localhost:5000/review/${id}`, {
+            fetch(`https://y-five-psi.vercel.app/review/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

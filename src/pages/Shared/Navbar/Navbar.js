@@ -52,11 +52,11 @@ const Navbar = () => {
                     user ?
                         <div className='flex items-center space-x-3'>
                             <FaUser></FaUser>
-                            <p>{user.displayName}</p>
-                            <Link to='/AddService' className="btn">Add Services</Link>
+                            <p className='font-bold'>{user.displayName}</p>
+                            <Link to='/AddService' className="btn-dental">Add Services</Link>
                         </div>
                         :
-                        <Link  to='/signUp' className="btn">Register</Link>
+                        <Link  to='/signUp' className="btn btn-dental">Register</Link>
                 }
             </div>
         </div>

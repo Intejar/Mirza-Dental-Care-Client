@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../../assests/images/dentist.jpg'
+import logo2 from '../../../assests/images/MIRZA dr 1.png'
 import Typed from 'react-typed';
 
 
@@ -7,9 +8,9 @@ import Typed from 'react-typed';
 const Banner = () => {
 
     return (
-        <div className='border border-blue-300 w-3/4 mx-auto p-10 container'>
+        <div className='w-3/4 mx-auto p-10 container'>
             <div className='grid grid-cols-2'>
-                <img className='w-1/2 mx-auto' src={logo} alt="dr_photo" />
+                <img className='w-3/4 mx-auto' src={logo2} alt="dr_photo" />
                 <div className='flex items-center'>
                     <div>
                         <h1 className='sm:text-2xl md:text-4xl font-bold'>Hello I am Dr Mirza</h1>

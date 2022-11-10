@@ -17,7 +17,7 @@ const AddServiceCard = ({ service }) => {
             email : userEmail
         }
         console.log(addedService)
-        fetch('http://localhost:5000/userservices', {
+        fetch('https://y-five-psi.vercel.app/userservices', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

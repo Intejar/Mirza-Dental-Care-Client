@@ -28,7 +28,7 @@ const LogIn = () => {
                 const currentUser = {
                     email : user.email
                 };
-                fetch('http://localhost:5000/jwt',{
+                fetch('https://y-five-psi.vercel.app/jwt',{
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'
@@ -68,7 +68,7 @@ const LogIn = () => {
                 const currentUser = {
                     email : user.email
                 };
-                fetch('http://localhost:5000/jwt',{
+                fetch('https://y-five-psi.vercel.app/jwt',{
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'

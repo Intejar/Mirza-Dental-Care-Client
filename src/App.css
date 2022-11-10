@@ -7,6 +7,20 @@
   pointer-events: none;
 }
 
+.btn-dental {
+  background: white;
+  border: 2px solid lightblue;
+  font-weight: bold;
+  color: black;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.btn-dental:hover {
+  background: rgb(95, 95, 238);
+  
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

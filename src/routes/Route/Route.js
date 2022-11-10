@@ -1,5 +1,6 @@
 import Main from "../../layout/Main";
 import AddServices from "../../pages/AddServices/AddServices";
+import Blog from "../../pages/Blog/Blog";
 import Home from "../../pages/Home/Home/Home";
 import LogIn from "../../pages/LogIn/LogIn";
 import AddReview from "../../pages/Review/AddReview/AddReview";
@@ -35,12 +36,12 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=> fetch(`https://y-five-psi.vercel.app/services/${params.id}`)
             },
             {
                 path:'/review/:id',
                 element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=> fetch(`https://y-five-psi.vercel.app/services/${params.id}`)
             },
             {
                 path:'/UserReview',
@@ -49,7 +50,11 @@ const router = createBrowserRouter([
             {
                 path:'/AddService',
                 element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/services')
+                loader: ()=> fetch('https://y-five-psi.vercel.app/services')
+            },
+            {
+                path: '/blog',
+                element:<Blog></Blog>
             }
             
 

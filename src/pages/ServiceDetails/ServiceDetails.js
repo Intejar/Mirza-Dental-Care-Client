@@ -9,7 +9,7 @@ const ServiceDetails = () => {
     const price = about.price;
     const [userReviews, setUserReviews] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/review")
+        fetch("https://y-five-psi.vercel.app/review")
             .then(res => res.json())
             .then(data => {
                 setUserReviews(data)
