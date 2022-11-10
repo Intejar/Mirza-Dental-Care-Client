@@ -35,7 +35,7 @@ const MyReviewCard = ({ myReview, handleDelete, handleEdit }) => {
                     </div>
                 </td>
                 <td className=''>
-                    <textarea name='edit' className="textarea textarea-warning" defaultValue={editComment}a></textarea>
+                    <textarea name='edit' className="textarea textarea-warning" defaultValue={editComment}></textarea>
                 </td>
                 <th>
                     <label htmlFor="my-modal" className="btn">edit</label>

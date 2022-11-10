@@ -16,6 +16,7 @@ const AddServiceCard = ({ service }) => {
             userName : user.name,
             userEmail : user.email,
         }
+        console.log(addedService)
         fetch('http://localhost:5000/userServices', {
             method: "POST",
             headers: {
@@ -26,7 +27,7 @@ const AddServiceCard = ({ service }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                alert('your review has been added')
+                alert('your service has been added')
                 navigate('/')
             })
 
@@ -55,7 +56,7 @@ const AddServiceCard = ({ service }) => {
                         <li>For Age 41-older yrs: ${price.old} </li>
                     </ul>
                 </div>
-                <div className='card-actions justify-end'><button className="btn btn-outline btn-orange">Add service</button></div>
+                <div className='card-actions justify-end'><button onClick={()=>handleAddService} className="btn btn-outline btn-orange">Add service</button></div>
             </div>
         </div>
         </div>

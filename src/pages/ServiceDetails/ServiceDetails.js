@@ -11,7 +11,11 @@ const ServiceDetails = () => {
     useEffect(() => {
         fetch("http://localhost:5000/review")
             .then(res => res.json())
-            .then(data => setUserReviews(data))
+            .then(data => {
+                setUserReviews(data)
+                console.log(data)
+            }
+                )
     }, [])
 
     return (

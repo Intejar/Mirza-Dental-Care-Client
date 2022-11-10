@@ -3,14 +3,22 @@ import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 import MyReviewCard from '../MyReviewCard/MyReviewCard';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext)
-    const { email } = user;
+    const { user,logOut } = useContext(AuthContext)
     const [myReviews, setMyReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/review?email=${email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/userReview?email=${user?.email}`,{
+            headers: {
+                authorization : `bearer ${localStorage.getItem('token')}`
+            }
+        })
+            .then(res => {
+                if(res.status === 401|| res.status ===403){
+                    logOut()
+                }
+                return  res.json()
+            })
             .then(data => setMyReviews(data))
-    }, [email])
+    }, [user?.email , logOut])
     const handleEdit = (id, editedText) => {
         fetch(`http://localhost:5000/review/${id}`, {
             method: 'PATCH',
@@ -48,7 +56,6 @@ const MyReview = () => {
 
     return (
         <div>
-            {/* <h1>You have {myReview?.length} order</h1> */}
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
