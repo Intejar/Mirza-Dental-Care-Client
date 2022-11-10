@@ -7,10 +7,25 @@ const MyReview = () => {
     const { email } = user;
     const [myReviews, setMyReviews] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/review")
+        fetch(`http://localhost:5000/review?email=${email}`)
             .then(res => res.json())
             .then(data => setMyReviews(data))
-    }, [])
+    }, [email])
+    const handleEdit = (id, editedText) => {
+        fetch(`http://localhost:5000/review/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ comment: editedText })
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert('your changes has been added')
+                console.log(data)
+                
+            })
+    }
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete this order?')
         console.log(id)
@@ -52,7 +67,7 @@ const MyReview = () => {
                             {
 
 
-                                myReviews.map(myReview => <MyReviewCard key={myReview._id} userEmail={email} myReview={myReview} handleDelete={handleDelete}></MyReviewCard>)
+                                myReviews.map(myReview => <MyReviewCard key={myReview._id}  myReview={myReview} handleDelete={handleDelete} handleEdit={handleEdit}></MyReviewCard>)
 
                             }
                         </>

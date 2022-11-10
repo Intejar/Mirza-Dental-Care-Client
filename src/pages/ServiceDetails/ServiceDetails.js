@@ -12,7 +12,7 @@ const ServiceDetails = () => {
         fetch("http://localhost:5000/review")
             .then(res => res.json())
             .then(data => setUserReviews(data))
-    }, [title])
+    }, [])
 
     return (
         <div>
@@ -49,7 +49,7 @@ const ServiceDetails = () => {
                 <h1 className='text-3xl text-center'>What Our Patient Say</h1>
                 <div className='grid sm:grid-cols-1 md:grid-cols-3'>
                     {
-                        userReviews.map(userReview => <ReviewCard key={userReview._id} title={title} userReview={userReview}></ReviewCard>)
+                        userReviews.map(userReview => <ReviewCard key={userReview._id} title={title}  userReview={userReview}></ReviewCard>)
                     }
                 </div>
 

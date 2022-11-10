@@ -15,7 +15,7 @@ const Service = () => {
             <h1 className='text-3xl font-bold text-center'>Our services</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 {
-                    services.map(service => <ServiceCard service={service}></ServiceCard>)
+                    services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
                 }
             </div>
             <div className='flex justify-center mt-4'><button className='btn btn-primary'><Link to='/services'>see all</Link></button></div>

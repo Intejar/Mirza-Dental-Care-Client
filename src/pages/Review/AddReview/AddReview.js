@@ -15,13 +15,15 @@ const AddReview = () => {
         const email = form.email.value;
         const photo = form.photo.value
         const comment = form.comment.value;
+        const date = ''
         const review = {
             serviceId: _id,
-            serviceName: title,
+            serviceName:title,
             photo,
             name,
             email,
-            comment
+            comment,
+            date
         }
         fetch('http://localhost:5000/review', {
             method: "POST",
