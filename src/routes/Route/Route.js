@@ -2,6 +2,7 @@ import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
 import LogIn from "../../pages/LogIn/LogIn";
 import AddReview from "../../pages/Review/AddReview/AddReview";
+import MyReview from "../../pages/Review/UserReview/MyReview/MyReview";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Services/Services";
 import SignUp from "../../pages/SignUp/SignUp";
@@ -39,7 +40,12 @@ const router = createBrowserRouter([
                 path:'/review/:id',
                 element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
                 loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path:'/UserReview',
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>,
             }
+            
 
         ]
 

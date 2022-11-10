@@ -32,7 +32,7 @@ const Navbar = () => {
                     {
                         user ? 
                         <>
-                            <li><Link to=''>My Reviews</Link></li>
+                            <li><Link to='/UserReview'>My Reviews</Link></li>
                             <li><Link to='' onClick={handleLogOut}>Logout</Link></li>
                         </> 
                         : 
