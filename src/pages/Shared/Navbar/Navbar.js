@@ -36,7 +36,11 @@ const Navbar = () => {
                             <li><Link to='' onClick={handleLogOut}>Logout</Link></li>
                         </> 
                         : 
-                        <li><Link to='/signUp'>SignIn</Link></li>
+                    
+                        <>
+                            <li><Link to='/'>Add Services</Link></li>
+                            <li><Link to='/signUp'>SignIn</Link></li>
+                        </>
                     }
                 </ul>
             </div>
@@ -45,10 +49,10 @@ const Navbar = () => {
                     user ?
                         <div className='flex items-center space-x-3'>
                             <p>{user.displayName}</p>
-                            <a className="btn">Add Services</a>
+                            <Link to='/AddService' className="btn">Add Services</Link>
                         </div>
                         :
-                        <a className="btn">Register</a>
+                        <Link  to='/signUp' className="btn">Register</Link>
                 }
             </div>
         </div>

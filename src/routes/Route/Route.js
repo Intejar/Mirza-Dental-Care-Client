@@ -1,4 +1,5 @@
 import Main from "../../layout/Main";
+import AddServices from "../../pages/AddServices/AddServices";
 import Home from "../../pages/Home/Home/Home";
 import LogIn from "../../pages/LogIn/LogIn";
 import AddReview from "../../pages/Review/AddReview/AddReview";
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
             {
                 path:'/UserReview',
                 element: <PrivateRoute><MyReview></MyReview></PrivateRoute>,
+            },
+            {
+                path:'/AddService',
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
+                loader: ()=> fetch('http://localhost:5000/services')
             }
             
 
