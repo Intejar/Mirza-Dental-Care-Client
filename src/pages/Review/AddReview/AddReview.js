@@ -35,7 +35,7 @@ const AddReview = () => {
                 console.log(data)
                 alert('your review has been added')
                 form.reset()
-                // navigate(`/service/${_id}`)
+                navigate(`/services/${_id}`)
             })
 
         console.log(review)

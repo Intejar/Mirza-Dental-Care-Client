@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const handleLogOut = () => {
         logOut()
             .then(res => { })
@@ -27,18 +27,29 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/'>Home</Link></li>
-                    <li><a>Services</a></li>
+                    <li><Link to='/services'>Services</Link></li>
                     <li><a>Blog</a></li>
                     {
-                        user ? <li><Link to='' onClick={handleLogOut}>Logout</Link></li> : <li><Link to='/signUp'>SignIn</Link></li>
+                        user ? 
+                        <>
+                            <li><Link to=''>My Reviews</Link></li>
+                            <li><Link to='' onClick={handleLogOut}>Logout</Link></li>
+                        </> 
+                        : 
+                        <li><Link to='/signUp'>SignIn</Link></li>
                     }
                 </ul>
             </div>
             <div className="navbar-end">
                 {
-                    user && <p>{user.displayName}</p>
+                    user ?
+                        <div className='flex items-center space-x-3'>
+                            <p>{user.displayName}</p>
+                            <a className="btn">Add Services</a>
+                        </div>
+                        :
+                        <a className="btn">Register</a>
                 }
-                <a className="btn">Get started</a>
             </div>
         </div>
     );

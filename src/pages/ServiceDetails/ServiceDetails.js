@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import ReviewCard from '../Review/ReviewCard/ReviewCard';
 
 const ServiceDetails = () => {
     const about = useLoaderData()
     const { _id, title, img, description } = about
     const list = about.details;
     const price = about.price;
+    const [userReviews, setUserReviews] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:5000/review")
+            .then(res => res.json())
+            .then(data => setUserReviews(data))
+    }, [title])
 
     return (
         <div>
@@ -38,15 +45,20 @@ const ServiceDetails = () => {
                 </div>
 
             </div>
-            <div>
+            <div className='my-10'>
                 <h1 className='text-3xl text-center'>What Our Patient Say</h1>
+                <div className='grid sm:grid-cols-1 md:grid-cols-3'>
+                    {
+                        userReviews.map(userReview => <ReviewCard key={userReview._id} title={title} userReview={userReview}></ReviewCard>)
+                    }
+                </div>
 
-                <div>
+                <div className='flex justify-center'>
                     <button className='btn btn-primary'><Link to={`/review/${_id}`}>add review</Link></button>
                 </div>
 
             </div>
-                                
+
         </div>
     );
 };
