@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { toast } from 'react-hot-toast';
 
 const SignUp = () => {
     const { createUser, updateUserProfile} = useContext(AuthContext)
@@ -30,6 +31,7 @@ const SignUp = () => {
         const img = form.image.value;
         const confirm = form.confirm.value;
         if (password !== confirm) {
+            toast.error('password does not match!')
             setPassError('password does not match!')
         }
         // if (!/[A-Z]/.test(password)) {
@@ -46,6 +48,7 @@ const SignUp = () => {
                 const user = res.user
                 console.log(user)
                 setSuccess(true)
+                toast.success('user registered sucessfully')
                 form.reset()
                 HandleUpdate(name, img)
             })

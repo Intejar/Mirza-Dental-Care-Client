@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { FaEyeSlash, FaEye, FaGoogle, FaGithub } from "react-icons/fa";
+import { toast } from 'react-hot-toast';
 
 
 const LogIn = () => {
@@ -39,6 +40,7 @@ const LogIn = () => {
                 .then(data => {
                     console.log(data)
                     localStorage.setItem('token', data.token)
+                    toast.success('user login successful')
                     navigate(from,{replace : true})
                 })
             })
@@ -79,7 +81,8 @@ const LogIn = () => {
                 .then(data => {
                     console.log(data)
                     localStorage.setItem( 'token', data.token )
-                    navigate(from,{replace : true})                    
+                    toast.success('user login successful')
+                    navigate('/')                    
                     
                 })
             })

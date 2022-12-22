@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 import MyReviewCard from '../MyReviewCard/MyReviewCard';
 
@@ -29,7 +30,7 @@ const MyReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('your changes has been added')
+                toast.success('your changes has been added')
                 console.log(data)
                 
             })
@@ -45,7 +46,7 @@ const MyReview = () => {
                 .then(data => {
                     console.log(data)
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully')
+                        toast.success('deleted successfully')
                         const remaining = myReviews.filter(odr => odr._id !== id)
                         setMyReviews(remaining)
                     }
